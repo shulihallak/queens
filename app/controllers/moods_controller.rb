@@ -25,21 +25,24 @@ before_action :require_current_user
 
 def edit
   @mood = Mood.find(params[:id])
+
 end
 
-def update
-     @mood = Mood.find(params[:id])
-     if @mood.update_attributes(mood_params)
-       
-     else
-       render json: {error: "Story could not be created."}, status: 422
-     end
-   end
+#fancy update method with error message
+# def update
+#      @mood = Mood.find(params[:id])
+#      if @mood.update(mood_params)
+#
+#      else
+#        render json: {error: "Mood could not be updated."}, status: 422
+#      end
+# end
 
 def update
   @mood = Mood.find(params[:id])
-  @mood.update(mood_params)
+  @mood.update!(mood_params)
 end
+
 def show
   @mood = Mood.find(params[:id])
 end
@@ -58,6 +61,6 @@ end
 private
 
   def mood_params
-    params.require(:mood).permit(:happiness, :image)
+    params.require(:mood).permit(:happiness)
   end
 end
