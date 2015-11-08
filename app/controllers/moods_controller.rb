@@ -28,6 +28,15 @@ def edit
 end
 
 def update
+     @mood = Mood.find(params[:id])
+     if @mood.update_attributes(mood_params)
+       
+     else
+       render json: {error: "Story could not be created."}, status: 422
+     end
+   end
+
+def update
   @mood = Mood.find(params[:id])
   @mood.update(mood_params)
 end
@@ -36,17 +45,19 @@ def show
 end
 
 def destroy
-  @mood = current_user.moods(mood_params)
-  @mood.destroy
-  flash[:notice] = "Mood deleted!"
-
-  redirect_to moods_path
+    @mood = Mood.find(params[:id])
+    if @mood.destroy
+      render json: {}, status: 200
+    else
+      render json: {error: "Mood could not be deleted."}, status: 422
+    end
 end
+
 
 
 private
 
   def mood_params
-    params.require(:mood).permit(:happiness)
+    params.require(:mood).permit(:happiness, :image)
   end
 end
