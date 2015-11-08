@@ -95,6 +95,47 @@ new_mood_factor GET    /moods/:mood_id/factors/new(.:format) factors#new {:forma
 
 #Paperclip details
 
+### Index and Show method details
+
+Factors contains the image
+
+Mood Index (show all) will not show the image file details in factors []
+
+Mood Show will render the image details with the following key-value pairs:
+
+```json
+id: 2,
+happiness: 10,
+created_at: "2015-11-07T20:05:32.348Z",
+updated_at: "2015-11-07T20:05:32.348Z",
+factors: [
+    {
+    id: 2,
+    mood_id: 2,
+    blurb: "yesssss!",
+    created_at: "2015-11-07T21:08:39.095Z",
+    updated_at: "2015-11-07T21:08:39.095Z",
+    image_file_name: null,
+    image_content_type: null,
+    image_file_size: null,
+    image_updated_at: null
+    },
+    {
+    id: 3,
+    mood_id: 2,
+    blurb: "haaaayyyyy",
+    created_at: "2015-11-07T21:16:15.566Z",
+    updated_at: "2015-11-07T21:16:15.566Z",
+    image_file_name: null,
+    image_content_type: null,
+    image_file_size: null,
+    image_updated_at: null
+    }
+  ]
+}
+```
+
+
 ### Understanding Storage
 
 The files that are assigned as attachments are, by default, placed in the
