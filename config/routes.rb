@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'application/angular'
 
+  # for d3 index page
+ get 'graph/index'
+ get 'graph/data', defaults: { format: :json}
+
   resources :moods, defaults: { format: :json} do
     resources :factors, shallow: true
   end
