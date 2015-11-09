@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+// Bower packages
 //= require d3.v3

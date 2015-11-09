@@ -32,6 +32,8 @@ gem 'faker'
 gem "paperclip", "~> 4.2"
 
 gem 'd3_rails'
+
+ gem "bower-rails", "~> 0.10.0"
 # Use Unicorn as the app server
 # gem 'unicorn'
 
