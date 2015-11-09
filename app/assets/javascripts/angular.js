@@ -58,7 +58,7 @@ app.controller('MoodController', ['$http', function($http){
     console.log("controller in moddsCTRL is", controller)
     console.log("data in moodsCTRL is",data)
     console.log("data.mood is", data.mood)
-  
+
     controller.current_user_moods.pop();
     controller.current_user_moods.push(data.mood);
     controller.getMood();
@@ -67,7 +67,7 @@ app.controller('MoodController', ['$http', function($http){
 
   this.createFactor = function(mood_id){
     console.log("mood id is", mood_id);
-    console.log("this worked", this.blurb); 
+    console.log("this worked", this.blurb);
     console.log('/moods/'+mood_id+'/factors');
 
  $http.post('/moods/'+mood_id+'/factors', {
@@ -95,34 +95,7 @@ app.controller('MoodController', ['$http', function($http){
 
 // app.controller('FactorController', ['$http', '$scope', function($http, $scope){
 
-<<<<<<< HEAD
-  // blurb string
-  // var controller = this;
 
-  // get the happiness value for current user
-  // this.getFactor = function(){
-  //   $http.get('/moods/+'+$scope.$parent.mood.id'').success(function(data){
-  //     controller.moods = $scope.mood.factors;
-  //   });
-  // };
-
-  // fetching happiness data
-  // this.getFactor();
-
-  // post the new factor
-  this.createFactor = function(){
-  $http.post('/moods/'+$scope.$parent.moods.id+'/factors', {
-    authenticity_token: authenticity_token,
-    factor: {
-      blurb: this.blurb
-    }
-  }).success(function(data){
-    console.log(data);
-    $scope.$parent.MoodController.getMood();
-  });
-  };
-}]);
-=======
 // //   // call in the authenticity token
 //   var authenticity_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -195,4 +168,3 @@ app.controller('MoodController', ['$http', function($http){
 //         controller: "ContactsEditCtrl" })
 //     .otherwise({ redirectTo: "/contacts" });
 // });
->>>>>>> c0375f1070165f772fd97ea4b08329b1c7a38722
