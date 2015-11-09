@@ -1,7 +1,7 @@
+json.mood_id @factor.mood_id
 
-  json.factors do
-    json.id @factor.id
-    json.blurb @factor.blurb
-    json.attachment @factor.attachment
-    json.created_at @factor.created_at
-  end
+json.factor do
+  json.id @factor.id
+  json.description @factor.description
+  json.occurred_at @factor.occurred_at
+end

@@ -1,8 +1,8 @@
 class FactorsController < ApplicationController
-  # skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
 
   def create
-    @mood = Mood.find(params[:mood_id])
+    mood = Mood.find(params[:mood_id])
 
     @factor = factor.moods.new(factor_params)
 
@@ -20,12 +20,15 @@ end
 
 def show
   mood = Mood.find(params[:mood_id])
-  @factor = mood.factors.find(factor_params)
+  @factor = mood.factors.find(params[:id])
+  # @factor = Factor.find(params[:factor_id])
 end
 
+
 def index
-  mood = Mood.find(params[:mood_id])
-  @factors = mood.factors
+  # mood = Mood.find(params[:mood_id])
+  # @factors = mood.factors
+  @factors = Factor.all
 end
 
 def edit

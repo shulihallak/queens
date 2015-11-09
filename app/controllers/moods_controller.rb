@@ -1,8 +1,9 @@
 class MoodsController < ApplicationController
 before_action :require_current_user
+
 # skip_before_action :verify_authenticity_token, only: :create
   def index
-    @moods = current_user.moods
+    @moods = current_user.moods.includes(:factors)
 
   end
 
@@ -59,6 +60,15 @@ end
 
 
 private
+
+
+def current_user
+  if session[:session_token]
+    @current_user ||= User.find_by(session_token: session[:session_token])
+  else
+    @current_user = nil
+  end
+end
 
   def mood_params
     params.require(:mood).permit(:happiness)

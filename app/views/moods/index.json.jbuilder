@@ -5,8 +5,10 @@ json.moods(@moods) do |mood|
   json.happiness mood.happiness
   json.created_at mood.created_at
 
+
   json.factors(mood.factors) do |fact|
     json.id fact.id
+    json.mood_id fact.mood_id
     json.blurb fact.blurb
     # json.attachment fact.attachment
     json.created_at fact.created_at
