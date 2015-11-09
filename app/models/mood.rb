@@ -6,5 +6,6 @@ class Mood < ActiveRecord::Base
 
   belongs_to :user
   has_many :factors, dependent: :destroy
+  accepts_nested_attributes_for :factors
 
 end

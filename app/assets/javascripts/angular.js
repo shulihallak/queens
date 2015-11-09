@@ -3,7 +3,6 @@
 ////////////////////////////////////////
 var app = angular.module('moodApp', []);
 
-
 ////////////////////////////////////////
 /////////// HEADER CONTROLLER //////////
 ////////////////////////////////////////
@@ -35,6 +34,7 @@ app.controller('MoodController', ['$http', function($http){
   this.getMood = function(){
     $http.get('/moods').success(function(data){
       controller.current_user_moods = data.moods;
+      console.log(data.moods);
     });
   };
 
@@ -72,26 +72,27 @@ app.controller('FactorController', ['$http', '$scope', function($http, $scope){
   var authenticity_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
   // blurb string
-  var controller = this;
+  // var controller = this;
 
   // get the happiness value for current user
-  this.getFactor = function(){
-    $http.get('/factors').success(function(data){
-      controller.moods = $scope.mood.factors;
-    });
-  };
+  // this.getFactor = function(){
+  //   $http.get('/moods/+'+$scope.$parent.mood.id'').success(function(data){
+  //     controller.moods = $scope.mood.factors;
+  //   });
+  // };
 
   // fetching happiness data
-  this.getFactor();
+  // this.getFactor();
 
   // post the new factor
   this.createFactor = function(){
-  $http.post('/factors', {
+  $http.post('/moods/'+$scope.$parent.moods.id+'/factors', {
     authenticity_token: authenticity_token,
     factor: {
       blurb: this.blurb
     }
   }).success(function(data){
+    console.log(data);
     $scope.$parent.MoodController.getMood();
   });
   };

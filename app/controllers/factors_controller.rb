@@ -4,7 +4,7 @@ class FactorsController < ApplicationController
   def create
     mood = Mood.find(params[:mood_id])
 
-    @factor = factor.moods.new(factor_params)
+    @factor = mood.factors.new(factor_params)
 
     if @factor.save
 
