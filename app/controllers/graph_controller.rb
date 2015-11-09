@@ -3,11 +3,11 @@ class GraphController < ApplicationController
   end
 
 # code from overfitted.com
-  def data
-    respond_to do |format|
-      format.json {
-        render :json => [1,2,3,4,5]
-      }
-  end
-end
+  # def data
+  #   respond_to do |format|
+  #     format.json {
+  #       render :json =>
+  #     }
+  # end
+# end
 end
