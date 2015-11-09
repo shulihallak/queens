@@ -8,13 +8,14 @@ class FactorsController < ApplicationController
 
     if @factor.save
 
-    else
-      render json: {
-        error: {
-          message:
-          @factor.errors.full_messages.to_sentence
-        }
-      }
+
+    # else
+      # render json: {
+      #   error: {
+      #     message:
+      #     @factor.errors.full_messages.to_sentence
+      #   }
+      # }
   end
 end
 
@@ -50,7 +51,7 @@ end
 
   private
   def factor_params
-    params.require(:factor).permit(:blurb, :occurred_at, :image)
+    params.require(:factor).permit(:blurb, :created_at, :image)
 
   end
 
