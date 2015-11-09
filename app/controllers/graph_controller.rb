@@ -10,3 +10,4 @@ class GraphController < ApplicationController
       }
   end
 end
+end
