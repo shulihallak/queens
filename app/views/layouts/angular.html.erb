@@ -16,6 +16,8 @@
 
 
 
+  <base href="/"> </base>
+
 </head>
 <body>
 
@@ -29,17 +31,18 @@
         <!-- new mood post -->
         <a href class="headerlink"="#">POST YOUR MOOD</a> |
         <!-- see all mood posts -->
-        <a href class="headerlink"="#">SEE YOUR MOODS</a> |
+        <a href="/moods" class="headerlink"="#">SEE YOUR MOODS</a> |
         <!-- D3 Mood Chart -->
         <a href class="headerlink"="#">MOOD CHART</a> |
         <!-- user page -->
         Welcome, <a href class="headerlink"="#">{{ header.current_user.email }}</a> </h1>
   </header>
   </nav>
-
+ 
   <%= yield %>
+   <div ng-view>
+</div>
 
-  <div ng-view></div>
 
   <%= javascript_include_tag 'angular', 'data-turbolinks-track' => true %>
 

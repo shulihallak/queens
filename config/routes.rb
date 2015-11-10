@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'application#welcome'
 
-  get 'application/angular'
+  get 'application/angular' 
 
   # for d3 index page
  get 'graph/index'
