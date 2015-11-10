@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="">
   <head>
     <meta charset="utf-8">
     <title>AngularJS + D3.js</title>
-    <meta charset="utf-8">  <!-- it's important for d3.js -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/d3/d3.js"></script>
-<script src="bower_components/nvd3/nv.d3.js"></script> <!-- or use another assembly -->
-<script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
-<link rel="stylesheet" href="bower_components/nvd3/nv.d3.css">
+    <meta charset="utf-8">
+    <!-- it's important for d3.js -->
     <!-- <script src="http://d3js.org/d3.v2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script> -->
 
     <script src="graph.js"></script>
   </head>
-  <body ng-controller="graphCtrl">
+  <body>
     <!-- Here's where our visualization will go -->
     <nvd3-line-chart
         data="myData"
