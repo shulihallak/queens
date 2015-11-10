@@ -76,3 +76,9 @@ app.controller('MoodController', ['$http', function($http){
     });
   };
 }]);
+
+angular
+    .module('app', ['angularFileUpload'])
+    .controller('AppController', function($scope, FileUploader) {
+        $scope.uploader = new FileUploader();
+    });
